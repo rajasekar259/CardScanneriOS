@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 import StripeCardScan
 
-class StripVC: UIViewController {
+class StripeVC: UIViewController {
     var viewModel: ContentViewModel?
     convenience init(viewModel: ContentViewModel) {
         self.init()
@@ -60,14 +60,14 @@ class StripVC: UIViewController {
 }
 
 
-struct StripView: UIViewControllerRepresentable {
+struct StripeView: UIViewControllerRepresentable {
     var viewModel: ContentViewModel
     
-    func updateUIViewController(_ uiViewController: StripVC, context: Context) {
+    func updateUIViewController(_ uiViewController: StripeVC, context: Context) {
         
     }
     
-    func makeUIViewController(context: Context) -> StripVC {
-        StripVC(viewModel: viewModel)
+    func makeUIViewController(context: Context) -> StripeVC {
+        StripeVC(viewModel: viewModel)
     }
 }

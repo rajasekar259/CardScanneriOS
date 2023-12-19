@@ -12,10 +12,11 @@ struct ContentView: View {
     @StateObject var viewModel = ContentViewModel()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "creditcard")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            Text("Card Scan Options!")
             
             if let message = viewModel.message {
                 Text(message)
@@ -31,7 +32,7 @@ struct ContentView: View {
             })
             
             Button("Open strip view", action: {
-                viewModel.isStripScannerPresented.toggle()
+                viewModel.isStripeScannerPresented.toggle()
             })
         }
         .padding()
@@ -41,8 +42,8 @@ struct ContentView: View {
         .sheet(isPresented: $viewModel.isCCScannerPresented, content: {
             ScannerView(viewModel: viewModel)
         })
-        .sheet(isPresented: $viewModel.isStripScannerPresented, content: {
-            StripView(viewModel: viewModel)
+        .sheet(isPresented: $viewModel.isStripeScannerPresented, content: {
+            StripeView(viewModel: viewModel)
         })
     }
 }
@@ -55,6 +56,6 @@ struct ContentView: View {
 class ContentViewModel: ObservableObject {
     @Published var isCardIOScannerPresented = false
     @Published var isCCScannerPresented = false
-    @Published var isStripScannerPresented = false
+    @Published var isStripeScannerPresented = false
     @Published var message: String?
 }
