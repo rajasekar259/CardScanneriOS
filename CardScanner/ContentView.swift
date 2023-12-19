@@ -22,14 +22,20 @@ struct ContentView: View {
                     .font(.subheadline)
             }
             
-            Button("Scan Card", action: {
-                viewModel.isScannerVCPresented.toggle()
+            Button("Scan with CardIO", action: {
+                viewModel.isCardIOScannerPresented.toggle()
+            })
+            
+            Button("Scan with CCScanner", action: {
+                viewModel.isCCScannerPresented.toggle()
             })
         }
         .padding()
-        .sheet(isPresented: $viewModel.isScannerVCPresented, content: {
-//            ScannerView(viewModel: viewModel)
+        .sheet(isPresented: $viewModel.isCardIOScannerPresented, content: {
             CardIOScannerView()
+        })
+        .sheet(isPresented: $viewModel.isCCScannerPresented, content: {
+            ScannerView(viewModel: viewModel)
         })
     }
 }
@@ -40,6 +46,7 @@ struct ContentView: View {
 
 
 class ContentViewModel: ObservableObject {
-    @Published var isScannerVCPresented = false
+    @Published var isCardIOScannerPresented = false
+    @Published var isCCScannerPresented = false
     @Published var message: String?
 }
