@@ -29,6 +29,10 @@ struct ContentView: View {
             Button("Scan with CCScanner", action: {
                 viewModel.isCCScannerPresented.toggle()
             })
+            
+            Button("Open strip view", action: {
+                viewModel.isStripScannerPresented.toggle()
+            })
         }
         .padding()
         .sheet(isPresented: $viewModel.isCardIOScannerPresented, content: {
@@ -36,6 +40,9 @@ struct ContentView: View {
         })
         .sheet(isPresented: $viewModel.isCCScannerPresented, content: {
             ScannerView(viewModel: viewModel)
+        })
+        .sheet(isPresented: $viewModel.isStripScannerPresented, content: {
+            StripView(viewModel: viewModel)
         })
     }
 }
@@ -48,5 +55,6 @@ struct ContentView: View {
 class ContentViewModel: ObservableObject {
     @Published var isCardIOScannerPresented = false
     @Published var isCCScannerPresented = false
+    @Published var isStripScannerPresented = false
     @Published var message: String?
 }
