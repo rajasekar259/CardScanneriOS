@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28AABB282B4DA94800E0F90F /* CardScan in Frameworks */ = {isa = PBXBuildFile; productRef = 28AABB272B4DA94800E0F90F /* CardScan */; };
 		28D3437F2B31977A000BC718 /* CardIOScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3437E2B31977A000BC718 /* CardIOScannerView.swift */; };
 		28D343812B3197A7000BC718 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D343802B3197A7000BC718 /* ScannerView.swift */; };
 		28D343942B319D30000BC718 /* StripeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D343932B319D30000BC718 /* StripeVC.swift */; };
@@ -78,6 +79,7 @@
 				28D343972B31DC45000BC718 /* Stripe in Frameworks */,
 				28E59D752B2CAA5A00DDB69A /* Accelerate.framework in Frameworks */,
 				28E59D8C2B2CAE1500DDB69A /* libopencv_core.a in Frameworks */,
+				28AABB282B4DA94800E0F90F /* CardScan in Frameworks */,
 				28E59D792B2CAA6D00DDB69A /* AudioToolbox.framework in Frameworks */,
 				28E59D7D2B2CAA7F00DDB69A /* MobileCoreServices.framework in Frameworks */,
 			);
@@ -182,6 +184,7 @@
 				28D3439A2B31DC45000BC718 /* StripeCardScan */,
 				28D3439C2B31DC45000BC718 /* StripeFinancialConnections */,
 				28D3439E2B31DC45000BC718 /* StripeIdentity */,
+				28AABB272B4DA94800E0F90F /* CardScan */,
 			);
 			productName = CardScanner;
 			productReference = 28E59D4D2B2C97C200DDB69A /* CardScanner.app */;
@@ -214,6 +217,7 @@
 			packageReferences = (
 				28E59D5E2B2C980900DDB69A /* XCRemoteSwiftPackageReference "credit-card-scanner" */,
 				28D343952B31DC45000BC718 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
+				28AABB262B4DA94800E0F90F /* XCRemoteSwiftPackageReference "cardscan-ios" */,
 			);
 			productRefGroup = 28E59D4E2B2C97C200DDB69A /* Products */;
 			projectDirPath = "";
@@ -484,6 +488,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		28AABB262B4DA94800E0F90F /* XCRemoteSwiftPackageReference "cardscan-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getbouncer/cardscan-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
 		28D343952B31DC45000BC718 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
@@ -503,6 +515,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		28AABB272B4DA94800E0F90F /* CardScan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28AABB262B4DA94800E0F90F /* XCRemoteSwiftPackageReference "cardscan-ios" */;
+			productName = CardScan;
+		};
 		28D343962B31DC45000BC718 /* Stripe */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 28D343952B31DC45000BC718 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;

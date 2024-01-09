@@ -31,7 +31,7 @@ struct ContentView: View {
                 viewModel.isCCScannerPresented.toggle()
             })
             
-            Button("Open strip view", action: {
+            Button("Open stripe view", action: {
                 viewModel.isStripeScannerPresented.toggle()
             })
         }

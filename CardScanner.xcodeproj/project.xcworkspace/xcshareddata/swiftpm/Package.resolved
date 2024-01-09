@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "cardscan-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/getbouncer/cardscan-ios.git",
+      "state" : {
+        "revision" : "a964a5cded3c857638c0f475730110e37a916b7f",
+        "version" : "2.1.2"
+      }
+    },
+    {
       "identity" : "credit-card-scanner",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yhkaplan/credit-card-scanner.git",

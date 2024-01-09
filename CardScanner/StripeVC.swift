@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 import StripeCardScan
 
+
 class StripeVC: UIViewController {
     var viewModel: ContentViewModel?
     convenience init(viewModel: ContentViewModel) {
@@ -38,6 +39,7 @@ class StripeVC: UIViewController {
                  */
                 print("scan success")
                 self?.viewModel?.message = "\(scannedCard)"
+                
             case .canceled:
                 /*
                  * The scan was canceled by the user.
